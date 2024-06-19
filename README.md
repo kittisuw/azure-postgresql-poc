@@ -36,7 +36,7 @@ psql "host=$SERVER_NAME.postgres.database.azure.com dbname=demo_db user=$ADMIN_U
 
 
 
-## Test Restore to last time to new Instance 
+## 3. Test Restore to new Instance by using current time 
 ```sh
 az postgres flexible-server restore \
     --resource-group $RESOURCE_GROUP \
@@ -45,11 +45,10 @@ az postgres flexible-server restore \
     --public-access All
 ```
 
-### test
+### Test Query Data #Shoud have data like original server
 ```sh
 psql "host=$NEW_SERVER_NAME.postgres.database.azure.com dbname=demo_db user=$ADMIN_USER password=$ADMIN_PASSWORD sslmode=require" -c "SELECT * FROM $TABLE_NAME;"
 ```
-
 
 ## 2. Cleansing
 ```sh
