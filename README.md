@@ -1,5 +1,5 @@
 # Azure Database for PostgreSQL Backup and Restore by  point-in-time recovery (PITR)
-## 1. Create Database
+## 1. Create Database Instance
 ```sh
 # Variables
 RESOURCE_GROUP="abacus-poc-jib-rg"
@@ -41,8 +41,13 @@ psql "host=$SERVER_NAME.postgres.database.azure.com dbname=demo_db user=$ADMIN_U
 az postgres flexible-server restore \
     --resource-group $RESOURCE_GROUP \
     --name $NEW_SERVER_NAME \
-    --source-server $SERVER_NAME \
-    --public-access All
+    --source-server $SERVER_NAME;
+az postgres flexible-server firewall-rule create \
+    --resource-group $RESOURCE_GROUP \
+    --name $NEW_SERVER_NAME \
+    --rule-name AllowAllIPs \
+    --start-ip-address 0.0.0.0 \
+    --end-ip-address 255.255.255.255
 ```
 
 ### Test Query Data #Shoud have data like original server
