@@ -50,12 +50,12 @@ az postgres flexible-server firewall-rule create \
     --end-ip-address 255.255.255.255
 ```
 
-### Test Query Data #Shoud have data like original server
+### 4. Test Query Data #Shoud have data like original server
 ```sh
 psql "host=$NEW_SERVER_NAME.postgres.database.azure.com dbname=demo_db user=$ADMIN_USER password=$ADMIN_PASSWORD sslmode=require" -c "SELECT * FROM $TABLE_NAME;"
 ```
 
-## 2. Cleansing
+## Cleansing
 ```sh
 az postgres flexible-server delete \
   --resource-group $RESOURCE_GROUP \
