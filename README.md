@@ -38,7 +38,7 @@ psql "host=$SERVER_NAME.postgres.database.azure.com dbname=demo_db user=$ADMIN_U
 
 ## 3. Test Restore to new Instance by using current time 
 ```sh
-az postgres flexible-server restore \
+time az postgres flexible-server restore \
     --resource-group $RESOURCE_GROUP \
     --name $NEW_SERVER_NAME \
     --source-server $SERVER_NAME;
