@@ -1,4 +1,4 @@
-# Azure Database for PostgreSQL Backup and Restore
+# Azure Database for PostgreSQL Backup and Restore by  point-in-time recovery (PITR)
 ## 1. Create Database
 ```sh
 # Variables
@@ -20,7 +20,7 @@ az postgres flexible-server create \
 ```
 
 
-## 2. Connect to PostgreSQL and setup database
+## 2. Connect to PostgreSQL and Setup new database and Create Table,Data on Default schema(public)
 ```sh
 psql "host=$SERVER_NAME.postgres.database.azure.com dbname=postgres user=$ADMIN_USER password=$ADMIN_PASSWORD sslmode=require" << EOF
 CREATE DATABASE $DB_NAME;
