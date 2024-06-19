@@ -15,8 +15,7 @@ az postgres flexible-server create \
   --resource-group $RESOURCE_GROUP \
   --name $SERVER_NAME \
   --admin-user $ADMIN_USER \
-  --admin-password $ADMIN_PASSWORD \
-  --location $LOCATION
+  --admin-password $ADMIN_PASSWORD
 ```
 
 ## 2. Cleansing
