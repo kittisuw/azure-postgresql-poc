@@ -1,4 +1,4 @@
-# Azure Database for PostgreSQL Backup and Restore by  point-in-time recovery (PITR)
+# Demo Azure Database for PostgreSQL Backup and Restore by  point-in-time recovery (PITR)
 ## 1. Create Database Instance
 ```sh
 # Variables
